@@ -9,6 +9,5 @@ gunicorn==18.0
 iniparse==0.4
 itsdangerous==0.24
 pycurl==7.19.3
-pyxattr==0.5.1
 simplejson==3.2.0
 six==1.4.1
