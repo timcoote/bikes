@@ -8,10 +8,7 @@ decorator==3.4.0
 gunicorn==18.0
 iniparse==0.4
 itsdangerous==0.24
-lxml==3.3.3
 pycurl==7.19.3
-pygpgme==0.3
-pyliblzma==0.5.3
 pyxattr==0.5.1
 simplejson==3.2.0
 six==1.4.1
