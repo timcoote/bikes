@@ -10,7 +10,6 @@ iniparse==0.4
 itsdangerous==0.24
 lxml==3.3.3
 pycurl==7.19.3
-pygobject==3.10.2
 pygpgme==0.3
 pyliblzma==0.5.3
 pyxattr==0.5.1
