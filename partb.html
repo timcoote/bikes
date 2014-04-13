@@ -1,0 +1,18 @@
+                    var ikon = {path: google.maps.SymbolPath.BACKWARD_OPEN_ARROW, scale: 2}
+                    var infowindow = new google.maps.InfoWindow ();
+                    var content ="%s";
+                    // var marker = new google.maps.MarkerWithLabel ({labelContent: "A", icon: {path: google.maps.SymbolPath.BACKWARD_CLOSED_ARROW, scale: 2}, position: new google.maps.LatLng (%%s, %%s), map: map, title: "Available %%s, free %%s"});
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (%s, %s),
+                       labelContent: "A:%s F:%s",
+                       labelClass: "labels",
+                       map: map});
+                    //var marker = new google.maps.Marker (position: new google.maps.LatLng (s, s), map: map, title: "Available s, free s"});
+                    // google.maps.event.addListener (marker, 'click', function () { infowindow.open (map, marker);});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                          // infowindow.close();
+                              infowindow.setContent(content);
+                              infowindow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
