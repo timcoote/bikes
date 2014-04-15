@@ -18,9 +18,16 @@ def index ():
 
 @app.route ('/stuff')
 def hello ():
+    return loc (51.50741, -0.12725)
+
+@app.route ('/loc/<float:lat>/<float:long>')
+def location (lat, long):
+    return loc (lat, long)
+
+def loc (lat, long):
     data = json.load (urllib2.urlopen ('http://api.bike-stats.co.uk/service/rest/bikestats?format=json'))
     stations = data ["dockStation"]
-    cx = (51.50741, -0.12725)
+    cx = (lat, long)
     dists = defaultdict (list)
     for s in stations:
         loc=(float (s[u'latitude']), float (s['longitude']))
