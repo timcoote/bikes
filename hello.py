@@ -18,11 +18,19 @@ def index ():
 
 @app.route ('/stuff')
 def hello ():
-    return loc (51.50741, -0.12725)
+    return loc1 (51.50741, -0.12725)
 
 @app.route ('/loc/<float:lat>/<float:long>')
 def location (lat, long):
+    return loc1 (lat, long)
+
+@app.route ('/bikes/<float:lat>/<float:long>')
+def stns (lat, long):
     return loc (lat, long)
+
+def loc1 (lat, long):
+    js = open ("parta.html").read()
+    return js + loc (lat, long) + open ("partc.html").read ()
 
 def loc (lat, long):
     data = json.load (urllib2.urlopen ('http://api.bike-stats.co.uk/service/rest/bikestats?format=json'))
@@ -34,8 +42,7 @@ def loc (lat, long):
         dist = sep (cx, loc)
     #    print loc, s[u'name'].encode ('utf-8'), dist
         dists [dist].append (s)
-    js = open ("parta.html").read()
-#    return "stuff"
+    js = ""
     pb = open ("partb.html").read()
     pc = open ("partc.html").read()
     i = 1
@@ -45,12 +52,11 @@ def loc (lat, long):
         s = sr [0]
         js += pb % tuple ([x.encode('utf-8') for x in s[u'name'].strip(), s[u'latitude'], s[u'longitude'], s[u'bikesAvailable'], s[u'emptySlots']])
         i+=1
-        if i > 15: break
-    js += pc
+        if i > 25: break
 #    print js
     return js
 
-##
+#
 if __name__ == "__main__":
     print hello()
 
