@@ -52,7 +52,7 @@ def loc (lat, long):
         s = sr [0]
         js += pb % tuple ([x.encode('utf-8') for x in s[u'name'].strip(), s[u'latitude'], s[u'longitude'], s[u'bikesAvailable'], s[u'emptySlots']])
         i+=1
-        if i > 25: break
+        if i > 150: break
 #    print js
     return js
 
