@@ -33,7 +33,7 @@ def loc1 (lat, long):
     return js + loc (lat, long) + open ("partc.html").read ()
 
 def loc (lat, long):
-    data = json.load (urllib2.urlopen ('http://api.bike-stats.co.uk/service/rest/bikestats?format=json'))
+    data = json.load (urllib2.urlopen ('http://bike-stats.appspot.com/service/rest/bikestats?format=json'))
     stations = data ["dockStation"]
     cx = (lat, long)
     dists = defaultdict (list)
