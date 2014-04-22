@@ -13,7 +13,7 @@ app = Flask (__name__)
 def sep (here, there):
 # scale lat so that one deg lat = 1 deg long
     londonRatio = cos (51.0/90.0 * pi/2.0)
-    return ((here[0]-there[0])*londonRatio)**2 + (here[1] - there [1]) ** 2
+    return ((here[0]-there[0])/londonRatio)**2 + (here[1] - there [1]) ** 2
 
 @app.route ('/')
 def index ():
