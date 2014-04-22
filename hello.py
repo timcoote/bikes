@@ -2,6 +2,7 @@ import os
 from collections import defaultdict
 from flask import Flask
 import json, urllib2
+from math import cos, pi
 
 app = Flask (__name__)
 
@@ -10,7 +11,9 @@ app = Flask (__name__)
 #print u"\n".join ([ "%s, %s: %s, bikes Available %s, slots free %s" % (x [u'latitude'], x[u'longitude'], x[u'name'], x[u'bikesAvailable'], x[u'emptySlots']) for x in stations]).encode ('utf-8')
 
 def sep (here, there):
-    return (here[0]-there[0])**2 + (here[1] - there [1]) ** 2
+# scale lat so that one deg lat = 1 deg long
+    londonRatio = cos (51.0/90.0 * pi/2.0)
+    return ((here[0]-there[0])*londonRatio)**2 + (here[1] - there [1]) ** 2
 
 @app.route ('/')
 def index ():
