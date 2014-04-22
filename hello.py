@@ -47,7 +47,6 @@ def loc (lat, long):
         dists [dist].append (s)
     js = ""
     pb = open ("partb.html").read()
-    pc = open ("partc.html").read()
     i = 1
 #    print "here come the dists", dists
     for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
