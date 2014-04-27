@@ -53,7 +53,7 @@ def loc1 (lat, long):
     return js + loc (lat, long) + open ("partc.html").read ()
 
 def loc (lat, long):
-    global dists
+    dists = defaultdict (list)
     data = json.load (urllib2.urlopen ('http://bike-stats.appspot.com/service/rest/bikestats?format=json'))
     stations = data ["dockStation"]
     cx = (lat, long)
@@ -79,7 +79,7 @@ def u (val):
     return val.encode('utf-8')
 
 def loc2 (lat, long):
-    global dists
+    dists = defaultdict (list)
     data = json.load (urllib2.urlopen ('http://bike-stats.appspot.com/service/rest/bikestats?format=json'))
     stations = data ["dockStation"]
     cx = (lat, long)
@@ -106,7 +106,7 @@ def loc2 (lat, long):
 
 #
 if __name__ == "__main__":
-    print loc2 (51.5, -0.14)
+#    print loc2 (51.5, -0.14)
     app.debug = True
     app.run ()
 
