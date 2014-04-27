@@ -35,11 +35,10 @@ def tester ():
 def hello ():
     return loc1 (51.50741, -0.12725)
 
-@app.route ('/loc/<float:lat>/<float:long>')
+@app.route ('/loc/<string:lat>/<string:long>')
 def location (lat, long):
-#    return Response ("[{'loc': {'lat': '51.50810309', 'long': '-0.12602103'}, 'levels': {'available': '20', 'free': '2'}, 'name': 'Craven Street, Strand'}]", mimetype='application/json')
-    return Response (json.dumps (loc2 (51.50741, -0.12725)), mimetype='application/json')
-#    return loc2 (lat, long)
+#    return Response (json.dumps (loc2 (51.50741, -0.12725)), mimetype='application/json')
+    return Response (json.dumps (loc2 (float(lat), float(long))), mimetype='application/json')
 
 @app.route ('/bikes/<float:lat>/<float:long>')
 def stns (lat, long):
@@ -107,7 +106,7 @@ def loc2 (lat, long):
 
 #
 if __name__ == "__main__":
+    print loc2 (51.5, -0.14)
     app.debug = True
     app.run ()
-    #print loc2 (51.50741, -0.12725)
 
