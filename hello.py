@@ -37,7 +37,9 @@ def hello ():
 
 @app.route ('/loc/<float:lat>/<float:long>')
 def location (lat, long):
-    return loc2 (lat, long)
+#    return Response ("[{'loc': {'lat': '51.50810309', 'long': '-0.12602103'}, 'levels': {'available': '20', 'free': '2'}, 'name': 'Craven Street, Strand'}]", mimetype='application/json')
+    return Response (json.dumps (loc2 (51.50741, -0.12725)), mimetype='application/json')
+#    return loc2 (lat, long)
 
 @app.route ('/bikes/<float:lat>/<float:long>')
 def stns (lat, long):
@@ -70,7 +72,7 @@ def loc (lat, long):
         s = sr [0]
         js += pb % tuple ([x.encode('utf-8') for x in s[u'name'].strip(), s[u'latitude'], s[u'longitude'], s[u'bikesAvailable'], s[u'emptySlots']])
         i+=1
-        if i > 150: break
+        if i > 10: break
 #    print js
     return js
 
@@ -99,11 +101,13 @@ def loc2 (lat, long):
 #        markers.append (json.dumps (marker))
         markers.append (marker)
         i+=1
-        if i > 150: break
+        if i > 10: break
 #    print js
     return markers
 
 #
 if __name__ == "__main__":
-    print loc2 (51.50741, -0.12725)
+    app.debug = True
+    app.run ()
+    #print loc2 (51.50741, -0.12725)
 
