@@ -1,4 +1,4 @@
-                    var infowindow = new google.maps.InfoWindow ();
+                    infowindow = new google.maps.InfoWindow ();
                     var content ="%s";
                     var marker = new MarkerWithLabel ({
                        position: new google.maps.LatLng (%s, %s),
@@ -7,8 +7,8 @@
                        map: map});
                     google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
                           return function() {
-                              infowindow.setContent(content);
-                              infowindow.open (map, marker);
+                              infow.setContent(content);
+                              infow.open (map, marker);
                           };
                     }) (marker, content, infowindow));
 
