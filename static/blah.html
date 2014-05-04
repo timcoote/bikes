@@ -1,0 +1,2127 @@
+                 var map = {}
+                 function initialize() {
+                    var mapOptions = { center: new google.maps.LatLng(51.5073, -0.1276), zoom: 12, disableDoubleClickZoom: true };
+                    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+                    google.maps.event.addListener(map, 'dblclick', function(me) {
+                          map.setCenter (me.latLng);
+                    });
+                    var infowindow;
+ 
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Craven Street, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50810309, -0.12602103),
+                       labelContent: "A:13 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Pall Mall East, West End";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50777049, -0.130699733),
+                       labelContent: "A:8 F:13",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="St. Martin's Street, West End";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50908747, -0.129697889),
+                       labelContent: "A:4 F:14",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Northumberland Avenue, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.506767, -0.123702),
+                       labelContent: "A:19 F:18",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="William IV Street, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50946212, -0.124749274),
+                       labelContent: "A:21 F:4",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Whitehall Place, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50654321, -0.123179697),
+                       labelContent: "A:11 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Waterloo Place, St. James's";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50663341, -0.131773845),
+                       labelContent: "A:0 F:20",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Charles II Street, West End";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50844614, -0.131961389),
+                       labelContent: "A:20 F:3",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Panton Street, West End";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50963938, -0.131510949),
+                       labelContent: "A:7 F:13",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Embankment (Horse Guards), Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50494561, -0.123247648),
+                       labelContent: "A:15 F:14",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="St. James's Square, St. James's";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50742485, -0.134621209),
+                       labelContent: "A:12 F:27",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Southampton Street, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51070161, -0.121723604),
+                       labelContent: "A:7 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Embankment (Savoy), Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50963123, -0.119047563),
+                       labelContent: "A:12 F:30",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Tavistock Street, Covent Garden";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51196803, -0.120718759),
+                       labelContent: "A:23 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Frith Street, Soho";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51310333, -0.13121385),
+                       labelContent: "A:8 F:10",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Wardour Street, Soho";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51251523, -0.133201961),
+                       labelContent: "A:7 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Moor Street, Soho";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51352755, -0.130110822),
+                       labelContent: "A:12 F:3",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Wellington Street , Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51175646, -0.119643424),
+                       labelContent: "A:10 F:2",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Somerset House, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.509943, -0.117619),
+                       labelContent: "A:8 F:33",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Storey's Gate, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50070305, -0.129698963),
+                       labelContent: "A:13 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Jubilee Gardens, South Bank";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.5046364, -0.116542278),
+                       labelContent: "A:2 F:26",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Concert Hall Approach 1, South Bank";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.505044, -0.115851),
+                       labelContent: "A:2 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Golden Square, Soho";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.5118973, -0.137043852),
+                       labelContent: "A:5 F:13",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Sackville Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51004801, -0.138846453),
+                       labelContent: "A:7 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Concert Hall Approach 2, South Bank";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.504942, -0.115533),
+                       labelContent: "A:4 F:12",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Belvedere Road, South Bank";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50613324, -0.114686385),
+                       labelContent: "A:17 F:18",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Drury Lane, Covent Garden";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51477076, -0.12221963),
+                       labelContent: "A:20 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Broadwick Street, Soho";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.5136846, -0.135580879),
+                       labelContent: "A:12 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Earnshaw Street , Covent Garden";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51611887, -0.128585022),
+                       labelContent: "A:7 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Kingsway Southbound, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.513875, -0.117774),
+                       labelContent: "A:21 F:12",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Waterloo Bridge, South Bank";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50535447, -0.113656543),
+                       labelContent: "A:9 F:5",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Soho Square , Soho";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51563144, -0.132328837),
+                       labelContent: "A:23 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Kingsway, Covent Garden";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51440928, -0.118478757),
+                       labelContent: "A:4 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Houghton Street, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51362054, -0.116764211),
+                       labelContent: "A:9 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Waterloo Station 1, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50402793, -0.11386435),
+                       labelContent: "A:4 F:30",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Strand, Strand";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.512529, -0.115163),
+                       labelContent: "A:9 F:27",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="High Holborn , Covent Garden";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51643491, -0.124332175),
+                       labelContent: "A:2 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Waterloo Roundabout, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50486, -0.113001),
+                       labelContent: "A:4 F:10",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Waterloo Station 2, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50391972, -0.11342628),
+                       labelContent: "A:21 F:32",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Newton Street, Covent Garden";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51612862, -0.120909408),
+                       labelContent: "A:16 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Waterloo Station 3, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50379168, -0.11282408),
+                       labelContent: "A:20 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Abbey Orchard Street, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49812559, -0.132102166),
+                       labelContent: "A:14 F:14",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Sardinia Street, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.515208, -0.117863),
+                       labelContent: "A:13 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Great Marlborough Street, Soho";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51461995, -0.137841333),
+                       labelContent: "A:27 F:12",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Abingdon Green, Great College Street";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.497622, -0.125978),
+                       labelContent: "A:9 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Green Park Station, West End";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.506613, -0.142844),
+                       labelContent: "A:20 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Stamford Street, South Bank";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50556905, -0.111606696),
+                       labelContent: "A:20 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Clifford Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51066202, -0.142345694),
+                       labelContent: "A:11 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Portugal Street, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51494305, -0.11614642),
+                       labelContent: "A:5 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Great Russell Street, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51772703, -0.127854211),
+                       labelContent: "A:12 F:13",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Bury Place, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51746, -0.12335),
+                       labelContent: "A:14 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Grafton Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.5099923, -0.143495266),
+                       labelContent: "A:14 F:4",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Buckingham Gate, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49886563, -0.137424571),
+                       labelContent: "A:6 F:10",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="St. George Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51196, -0.142783033),
+                       labelContent: "A:11 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Southampton Place, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51760685, -0.121328408),
+                       labelContent: "A:10 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Butler Place, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49782999, -0.135440826),
+                       labelContent: "A:4 F:14",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Archbishop's Park, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49824168, -0.117495865),
+                       labelContent: "A:12 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Lower Marsh, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50013942, -0.113936001),
+                       labelContent: "A:5 F:12",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Bruton Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51073687, -0.144165239),
+                       labelContent: "A:6 F:5",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Little Argyll Street, West End";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51449962, -0.141423695),
+                       labelContent: "A:16 F:3",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Bayley Street , Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51858757, -0.132053392),
+                       labelContent: "A:10 F:13",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Smith Square, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49580589, -0.127575233),
+                       labelContent: "A:9 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Clarges Street, West End";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.507326, -0.145827),
+                       labelContent: "A:7 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Curzon Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50706909, -0.145904427),
+                       labelContent: "A:9 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="British Museum, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51908011, -0.124678402),
+                       labelContent: "A:13 F:21",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Rathbone Street, Fitzrovia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51816295, -0.135025698),
+                       labelContent: "A:6 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Carey Street, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51501025, -0.112753217),
+                       labelContent: "A:10 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Baylis Road, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50144456, -0.110699309),
+                       labelContent: "A:16 F:2",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Wells Street, Fitzrovia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51734403, -0.138072691),
+                       labelContent: "A:18 F:20",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Chancery Lane, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.514274, -0.111257),
+                       labelContent: "A:10 F:4",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Lambeth North Station, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49914063, -0.112031483),
+                       labelContent: "A:12 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Alfred Place, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.519656, -0.132339),
+                       labelContent: "A:12 F:29",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Rochester Row, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49582705, -0.13547809),
+                       labelContent: "A:8 F:5",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Red Lion Street, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51824, -0.11655),
+                       labelContent: "A:17 F:18",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Horseferry Road, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49481649, -0.13045856),
+                       labelContent: "A:10 F:4",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Farm Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50935171, -0.14744969),
+                       labelContent: "A:8 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Howick Place, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49675303, -0.138733562),
+                       labelContent: "A:9 F:16",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Breams Buildings, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51593725, -0.111778348),
+                       labelContent: "A:2 F:22",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Red Lion Square, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51943538, -0.119123345),
+                       labelContent: "A:0 F:16",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Milroy Walk, South Bank";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50724437, -0.106237501),
+                       labelContent: "A:11 F:16",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Charlotte Street, Fitzrovia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51953043, -0.13577731),
+                       labelContent: "A:4 F:10",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Cardinal Place, Victoria";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49768448, -0.141943703),
+                       labelContent: "A:14 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Greycoat Street , Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49459148, -0.134234258),
+                       labelContent: "A:9 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Scala Street, Fitzrovia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51991453, -0.136039674),
+                       labelContent: "A:7 F:14",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Colombo Street, Southwark";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50545935, -0.10569204),
+                       labelContent: "A:5 F:10",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="John Islip Street, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.4937, -0.12692),
+                       labelContent: "A:13 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Bouverie Street, Temple";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51382102, -0.107927706),
+                       labelContent: "A:14 F:19",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Lambeth Road, Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49488108, -0.117974901),
+                       labelContent: "A:11 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Ashley Place, Victoria";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49616092, -0.140947636),
+                       labelContent: "A:22 F:2",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Sail Street, Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.495656, -0.114605),
+                       labelContent: "A:15 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Fire Brigade Pier, Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49369988, -0.121394101),
+                       labelContent: "A:6 F:22",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Southwark Station 1, Southwark";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.504043, -0.105312),
+                       labelContent: "A:28 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Woodstock Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51410514, -0.147301667),
+                       labelContent: "A:13 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Malet Street, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52168078, -0.130431727),
+                       labelContent: "A:16 F:33",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Foley Street, Fitzrovia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51918144, -0.140485596),
+                       labelContent: "A:0 F:23",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Vincent Street, Pimlico";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.493072, -0.129925),
+                       labelContent: "A:6 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Southwark Station 2, Southwark";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.504044, -0.104778),
+                       labelContent: "A:20 F:23",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="King Edward Walk, Waterloo";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49775, -0.10988),
+                       labelContent: "A:19 F:3",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Vincent Square, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49398524, -0.136928582),
+                       labelContent: "A:14 F:5",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Stanhope Gate, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50686435, -0.150666888),
+                       labelContent: "A:0 F:21",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Theobalds Road , Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52059681, -0.116688468),
+                       labelContent: "A:5 F:20",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Wellington Arch, Hyde Park";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50274025, -0.149569201),
+                       labelContent: "A:3 F:31",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Chapel Place, Marylebone";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51530805, -0.147203711),
+                       labelContent: "A:14 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Park Lane, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50542628, -0.150817316),
+                       labelContent: "A:1 F:17",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Marylebone Lane, Marylebone";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51475963, -0.148105415),
+                       labelContent: "A:19 F:5",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Broadcasting House, Marylebone";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51811784, -0.144228881),
+                       labelContent: "A:7 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Westminster Bridge Road, Elephant & Castle";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.498386, -0.107913),
+                       labelContent: "A:11 F:14",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Poured Lines, Bankside";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50669284, -0.103137426),
+                       labelContent: "A:25 F:5",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="South Audley Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50923022, -0.151296092),
+                       labelContent: "A:8 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Grosvenor Square, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51217033, -0.150481272),
+                       labelContent: "A:5 F:11",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Millennium Hotel, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.5109192966489, -0.1511263847351),
+                       labelContent: "A:10 F:17",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Howland Street, Fitzrovia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.520994, -0.139016),
+                       labelContent: "A:15 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Millbank House, Pimlico";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49188409, -0.125674815),
+                       labelContent: "A:8 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Kennington Road  , Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49571828, -0.110889274),
+                       labelContent: "A:19 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Great Titchfield Street, Fitzrovia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52025302, -0.141327271),
+                       labelContent: "A:1 F:18",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Regency Street, Westminster";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49206037, -0.132224622),
+                       labelContent: "A:1 F:21",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="New Fetter Lane, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.517428, -0.107987),
+                       labelContent: "A:14 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Holborn Circus, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51795029, -0.108657431),
+                       labelContent: "A:20 F:19",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="St. Bride Street, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51505991, -0.10534448),
+                       labelContent: "A:3 F:21",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Queen Mother Sports Centre, Victoria";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49357351, -0.139956043),
+                       labelContent: "A:20 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Russell Square Station, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52341837, -0.124121774),
+                       labelContent: "A:3 F:22",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Stonecutter Street, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51580998, -0.105270275),
+                       labelContent: "A:18 F:28",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Bedford Way, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52367314, -0.128377673),
+                       labelContent: "A:9 F:14",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Lollard Street, Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49288067, -0.114934001),
+                       labelContent: "A:15 F:10",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Guilford Street , Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52334672, -0.120202614),
+                       labelContent: "A:10 F:28",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Hatton Garden, Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51882555, -0.108028472),
+                       labelContent: "A:9 F:17",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Brunswick Square, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52395143, -0.122502346),
+                       labelContent: "A:7 F:17",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Tachbrook Street, Victoria";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49211134, -0.138364847),
+                       labelContent: "A:12 F:4",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Northington Street , Holborn";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.5222641, -0.114079481),
+                       labelContent: "A:13 F:6",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Hyde Park Corner, Hyde Park";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50311799, -0.153520935),
+                       labelContent: "A:12 F:15",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Bankside Mix, Bankside";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50581776, -0.100186337),
+                       labelContent: "A:38 F:22",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Walnut Tree Walk, Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49368637, -0.111014912),
+                       labelContent: "A:12 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Webber Street , Southwark";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50069361, -0.102091246),
+                       labelContent: "A:11 F:13",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Albert Embankment, Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49043573, -0.122806861),
+                       labelContent: "A:4 F:19",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Grosvenor Crescent, Belgravia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50135267, -0.153194766),
+                       labelContent: "A:13 F:5",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Portland Place, Marylebone";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52071513, -0.14521173),
+                       labelContent: "A:17 F:17",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="LSBU (Borough Road), Elephant & Castle";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49874469, -0.103132904),
+                       labelContent: "A:27 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Guildhouse Street, Victoria";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49234577, -0.141334487),
+                       labelContent: "A:9 F:7",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Geraldine Street, Elephant & Castle";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49612799, -0.106000855),
+                       labelContent: "A:4 F:13",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="North Audley Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.5129118, -0.153645496),
+                       labelContent: "A:7 F:10",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Belgrave Square, Belgravia";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49941247, -0.152317537),
+                       labelContent: "A:20 F:1",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Belgrave Road, Victoria";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49320445, -0.144132875),
+                       labelContent: "A:26 F:2",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Black Prince Road, Vauxhall";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.4908679, -0.116911864),
+                       labelContent: "A:7 F:12",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Rampayne Street, Pimlico";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.48997562, -0.132845681),
+                       labelContent: "A:2 F:18",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Taviton Street, Bloomsbury";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.52505093, -0.131161087),
+                       labelContent: "A:20 F:9",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Snow Hill, Farringdon";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51733427, -0.103604248),
+                       labelContent: "A:10 F:4",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Great Suffolk Street, The Borough";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.50173215, -0.100292412),
+                       labelContent: "A:1 F:20",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Upper Grosvenor Street, Mayfair";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51013066, -0.155757901),
+                       labelContent: "A:10 F:8",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Hinde Street, Marylebone";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.51681444, -0.151926305),
+                       labelContent: "A:0 F:20",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                    infowindow = new google.maps.InfoWindow ();
+                    var content ="Gloucester Street, Pimlico";
+                    var marker = new MarkerWithLabel ({
+                       position: new google.maps.LatLng (51.49096258, -0.139625122),
+                       labelContent: "A:23 F:2",
+                       labelClass: "labels",
+                       map: map});
+                    google.maps.event.addListener(marker, 'click', (function(marker, content, infow) {
+                          return function() {
+                              infow.setContent(content);
+                              infow.open (map, marker);
+                          };
+                    }) (marker, content, infowindow));
+
+                  google.maps.event.addListener(map, 'click', function(event) {
+                     placeMarker(event.latLng);
+                  });
+    
+                  function placeMarker(location) {
+                     var marker = new google.maps.Marker({
+                        position: location,
+                        map: map,
+                     });
+                     var infowindow = new google.maps.InfoWindow({
+                      content: 'Lat: ' + location.lat() +
+                          '<br>Long: ' + location.lng()
+                      });
+                      infowindow.open(map,marker);
+                    }
+                 }
+                 google.maps.event.addDomListener(window, 'load', initialize);
+
