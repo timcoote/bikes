@@ -111,7 +111,8 @@ function connect(url, socketOptions) {
   }
 
   if (protocol === 'amqp:') {
-    sock = require('net').connect(sockopts, onConnect);
+    s = require('net');
+    sock = s.connect(sockopts, onConnect);
   }
   else if (protocol === 'amqps:') {
     sock = require('tls').connect(sockopts, onConnect);

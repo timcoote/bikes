@@ -1,6 +1,7 @@
 var q = 'tasks';
 
-var open = require('amqplib').connect('amqp://localhost');
+require ( ['amqplib'], function (amqplib) {
+//var open = require('amqplib').connect('amqp://localhost');
 
 // Publisher
 open.then(function(conn) {
@@ -26,3 +27,5 @@ open.then(function(conn) {
   });
   return ok;
 }).then(null, console.warn);
+
+});

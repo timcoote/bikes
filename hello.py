@@ -17,15 +17,24 @@ def sep (here, there):
     londonRatio = cos (51.0/90.0 * pi/2.0)
     return ((here[0]-there[0])/londonRatio)**2 + (here[1] - there [1]) ** 2
 
-@app.route ('/static/promise.js')
-def servePromise ():
-    return send_from_directory ('static', filename='promise.js')
 
-@app.route ('/static/fullmap.html')
+@app.route ('/socket')
+def serveSocket ():
+    return (open ('y.html').read())
+
+@app.route ('/static/<string:fil>')
+def serveStatic (fil):
+    return send_from_directory ('static', filename=fil)
+
+#@app.route ('/static/promise.js')
+#def servePromise ():
+#    return send_from_directory ('static', filename='promise.js')
+
+#@app.route ('/static/blah.html')
 # just spit out a map that was made before
-def stuff1 ():
-#    return url_for ('static', filename='fullmap.html')
-    return send_from_directory ('static', filename='blah.html')
+#def stuff1 ():
+#    return url_for ('static', filename='blah.html')
+#    return send_from_directory ('static', filename='blah.html')
 
 @app.route ('/')
 def index ():
