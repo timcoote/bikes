@@ -1,2 +1,12 @@
 *.pyc
+static/squaremo-amqp.node-5d4bcc4/*
+static/master
+static/node_modules/*
+static/packagexx.json
+static/wibbles.js
+promise/*
+w.html
+wibble/*
+fullmap.html
+main.js
 
