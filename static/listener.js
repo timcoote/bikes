@@ -1,18 +1,21 @@
 // Use SockJS
-Stomp.WebSocketClass = SockJS;
+//Stomp.WebSocketClass = SockJS;
+
+var ws = new SockJS ('http://127.0.0.1:15674/stomp');
+var client = Stomp.over(ws);
 
 // Connection parameters
 var mq_username = "guest",
     mq_password = "guest",
     mq_vhost    = "/",
-    mq_url      = 'http://' + window.location.hostname + ':15674/stomp',
+    mq_url      = 'http://localhost:15674/stomp',
 
     // The queue we will read. The /topic/ queues are temporary
     // queues that will be created when the client connects, and
     // removed when the client disconnects. They will receive
     // all messages published in the "amq.topic" exchange, with the
     // given routing key, in this case "mymessages"
-    mq_queue    = "/topic/mymessages";
+    mq_queue    = "/queue/pv";
 
 // This is where we print incomoing messages
 var output;
@@ -36,8 +39,10 @@ function on_message(m) {
   output.innerHTML += m.body + '<br />';
 }
 
+
 // Create a client
-var client = Stomp.client(mq_url);
+//var client = Stomp.client(mq_url);
+client.connect ('guest', 'guest', on_connect, on_connect_error);
 
 window.onload = function () {
   // Fetch output panel

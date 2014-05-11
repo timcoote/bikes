@@ -119,7 +119,7 @@
       this.connected = false;
       this.heartbeat = {
         outgoing: 10000,
-        incoming: 10000
+        incoming: 0
       };
       this.maxWebSocketFrameSize = 16 * 1024;
       this.subscriptions = {};
@@ -160,7 +160,9 @@
     Client.prototype._setupHeartbeat = function(headers) {
       var serverIncoming, serverOutgoing, ttl, v, _ref, _ref1,
         _this = this;
+      this.debug("xx "+  headers.version);
       if ((_ref = headers.version) !== Stomp.VERSIONS.V1_1 && _ref !== Stomp.VERSIONS.V1_2) {
+        this.debug("failed on version "+  headers.version);
         return;
       }
       _ref1 = (function() {
@@ -173,6 +175,7 @@
         }
         return _results;
       })(), serverOutgoing = _ref1[0], serverIncoming = _ref1[1];
+      this.debug ("heartbeats" + headers['heart-beat']);
       if (!(this.heartbeat.outgoing === 0 || serverIncoming === 0)) {
         ttl = Math.max(this.heartbeat.outgoing, serverIncoming);
         if (typeof this.debug === "function") {
@@ -184,6 +187,7 @@
         });
       }
       if (!(this.heartbeat.incoming === 0 || serverOutgoing === 0)) {
+        this.debug("incoming, outgoing" + this.heartbeat.incoming + "xx" + serverOutgoing);
         ttl = Math.max(this.heartbeat.incoming, serverOutgoing);
         if (typeof this.debug === "function") {
           this.debug("check PONG every " + ttl + "ms");
