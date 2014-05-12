@@ -1,4 +1,4 @@
-import os
+import os, subprocess
 from collections import defaultdict
 from flask import Flask, Response, url_for, send_from_directory
 import json, urllib2
@@ -17,6 +17,11 @@ def sep (here, there):
     londonRatio = cos (51.0/90.0 * pi/2.0)
     return ((here[0]-there[0])/londonRatio)**2 + (here[1] - there [1]) ** 2
 
+
+@app.route ('/bogomips')
+def bogomips ():
+    ret = subprocess.check_output (["grep","bogomips", "/proc/cpuinfo"] )
+    return (ret)
 
 @app.route ('/socket')
 def serveSocket ():
