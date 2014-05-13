@@ -36,7 +36,7 @@ function on_connect_error() {
 function on_message(m) {
   console.log('message received'); 
   console.log(m);
-  output.innerHTML += m.body + '<br />';
+  output.innerHTML = m.body + '<br />';
 }
 
 

@@ -22,10 +22,10 @@ channel.queue_declare (queue="pv", durable=True)
 #   except subprocess.CalledProcessError as e:
 #      print "failed", e
 #
-while True:
-    msg = "temperature is: %f" % random.randint(15,25)
-
-    #print msg
+for i in range (1,2000):
+#    msg = "temperature is: %f" % random.randint(15,25)
+    msg = "Current output is " + subprocess.check_output (["ssh", "tim@172.17.1.5", "cat", "pvi/aurora-1.7.8d/output", "|", "tail", "-1", "|", "awk", "'{print $7}'"]) + " W"
+    print msg
 
     channel.basic_publish (exchange = "", routing_key = "pv", body = msg)
 
