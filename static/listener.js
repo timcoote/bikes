@@ -1,7 +1,7 @@
 // Use SockJS
 //Stomp.WebSocketClass = SockJS;
 
-var ws = new SockJS ('https://127.0.0.1:15674/stomp');
+var ws = new SockJS ('http://127.0.0.1:15674/stomp');
 var client = Stomp.over(ws);
 
 // Connection parameters
