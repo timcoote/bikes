@@ -1,4 +1,4 @@
-import subprocess, random
+import subprocess, random, time
 import pika, os, urlparse
 
 url_str = os.environ.get ("CLOUDAMQP_URL", "amqp://guest:guest@localhost//")
@@ -6,9 +6,9 @@ print url_str
 url = urlparse.urlparse (url_str)
 print url.__str__()
 
-connection = pika.BlockingConnection (pika.ConnectionParameters (host="localhost"))
-#connection = pika.BlockingConnection (pika.ConnectionParameters (host=url.hostname, virtual_host=url.path [1:],
-#                      credentials = pika.PlainCredentials (url.username, url.password)))
+#connection = pika.BlockingConnection (pika.ConnectionParameters (host="localhost"))
+connection = pika.BlockingConnection (pika.ConnectionParameters (host=url.hostname, virtual_host=url.path [1:],
+                      credentials = pika.PlainCredentials (url.username, url.password)))
 
 channel = connection.channel ()
 
@@ -23,8 +23,9 @@ channel.queue_declare (queue="pv", durable=True)
 #      print "failed", e
 #
 for i in range (1,2000):
-#    msg = "temperature is: %f" % random.randint(15,25)
-    msg = "Current output is " + subprocess.check_output (["ssh", "tim@172.17.1.5", "cat", "pvi/aurora-1.7.8d/output", "|", "tail", "-1", "|", "awk", "'{print $7}'"]) + " W"
+    msg = "temperature is: %f" % random.randint(15,25)
+    time.sleep (2)
+#    msg = "Current output is " + subprocess.check_output (["ssh", "mercury", "ssh", "tim@172.17.1.5", "cat", "pvi/aurora-1.7.8d/output", "|", "tail", "-1", "|", "awk", "'{print $1, $10, $15}'"])
     print msg
 
     channel.basic_publish (exchange = "", routing_key = "pv", body = msg)

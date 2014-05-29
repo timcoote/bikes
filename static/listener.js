@@ -1,14 +1,14 @@
 // Use SockJS
 //Stomp.WebSocketClass = SockJS;
 
-var ws = new SockJS ('http://127.0.0.1:15674/stomp');
+var ws = new SockJS ('https://127.0.0.1:15674/stomp');
 var client = Stomp.over(ws);
 
 // Connection parameters
 var mq_username = "guest",
     mq_password = "guest",
     mq_vhost    = "/",
-    mq_url      = 'http://localhost:15674/stomp',
+    mq_url      = 'http://peaceful-earth-7435.heroku.com:15674/stomp',
 
     // The queue we will read. The /topic/ queues are temporary
     // queues that will be created when the client connects, and
@@ -36,7 +36,8 @@ function on_connect_error() {
 function on_message(m) {
   console.log('message received'); 
   console.log(m);
-  output.innerHTML = m.body + '<br />';
+  var currentTime = new Date();
+  output.innerHTML = '<b> ' + currentTime.getSeconds() + 'secs' + m.body + '</b><br />';
 }
 
 
