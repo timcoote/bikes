@@ -1,7 +1,8 @@
 // Use SockJS
 //Stomp.WebSocketClass = SockJS;
 
-var ws = new SockJS ('http://127.0.0.1:15674/stomp');
+#var ws = new SockJS ('http://127.0.0.1:15674/stomp');
+var ws = new SockJS ('amqp://bbszqpfp:zP35CsFKb_va50nYvxG7652kC0zFl32r@lemur.cloudamqp.com/bbszqpfp');
 var client = Stomp.over(ws);
 
 // Connection parameters
@@ -37,7 +38,7 @@ function on_message(m) {
   console.log('message received'); 
   console.log(m);
   var currentTime = new Date();
-  output.innerHTML = '<b> ' + currentTime.getSeconds() + 'secs' + m.body + '</b><br />';
+  output.innerHTML = '<b> ' + currentTime.getSeconds() + ' secs, ' + m.body + '</b><br />';
 }
 
 
