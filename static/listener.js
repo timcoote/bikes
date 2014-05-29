@@ -1,7 +1,7 @@
 // Use SockJS
 //Stomp.WebSocketClass = SockJS;
 
-#var ws = new SockJS ('http://127.0.0.1:15674/stomp');
+//var ws = new SockJS ('http://127.0.0.1:15674/stomp');
 var ws = new SockJS ('amqp://bbszqpfp:zP35CsFKb_va50nYvxG7652kC0zFl32r@lemur.cloudamqp.com/bbszqpfp');
 var client = Stomp.over(ws);
 
