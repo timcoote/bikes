@@ -3,7 +3,8 @@
 
 //var ws = new SockJS ('http://127.0.0.1:15674/stomp');
 //var ws = new SockJS ('amqp://bbszqpfp:zP35CsFKb_va50nYvxG7652kC0zFl32r@lemur.cloudamqp.com/bbszqpfp');
-var ws = new SockJS ('ws://bbszqpfp:zP35CsFKb_va50nYvxG7652kC0zFl32r@lemur.cloudamqp.com/bbszqpfp:61614/stomp');
+//var ws = new SockJS ('ws://bbszqpfp:zP35CsFKb_va50nYvxG7652kC0zFl32r@lemur.cloudamqp.com/bbszqpfp:61614/stomp'); // fails with no xor
+var ws = new SockJS ('ws://peaceful-earth-7435.herokuapp.com/bbszqpfp:61614/stomp');
 
 var client = Stomp.over(ws);
 
