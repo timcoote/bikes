@@ -23,7 +23,7 @@ channel.queue_declare (queue="pv", durable=True)
 #      print "failed", e
 #
 for i in range (1,2000):
-    msg = "temperature is: %f" % random.randint(15,25)
+    msg = "temperature is: %f" % random.randint(15,25) + time.strftime (" %Y-%m-%d %H:%M:%S", time.localtime ())
     time.sleep (2)
 #    msg = "Current output is " + subprocess.check_output (["ssh", "mercury", "ssh", "tim@172.17.1.5", "cat", "pvi/aurora-1.7.8d/output", "|", "tail", "-1", "|", "awk", "'{print $1, $10, $15}'"])
     print msg
