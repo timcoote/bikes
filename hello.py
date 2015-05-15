@@ -141,7 +141,7 @@ def loc3 (lat, long):
 #        markers.append (json.dumps (marker))
         markers.append (marker)
         i+=1
-        if i > 20: break
+        if i > 10: break
     return markers
 
 
