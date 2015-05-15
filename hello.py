@@ -8,7 +8,6 @@ from math import cos, pi
 
 app = Flask (__name__, static_folder='static', static_url_path='')
 
-
 dists = defaultdict (list)
 
 def sep (here, there):
