@@ -1,3 +1,5 @@
+import logging
+from xmlutils.xml2json import xml2json
 import os, subprocess
 from collections import defaultdict
 from flask import Flask, Response, url_for, send_from_directory
@@ -56,7 +58,7 @@ def hello ():
 @app.route ('/loc/<string:lat>/<string:long>')
 def location (lat, long):
 #    return Response (json.dumps (loc2 (51.50741, -0.12725)), mimetype='application/json')
-    return Response (json.dumps (loc2 (float(lat), float(long))), mimetype='application/json')
+    return Response (json.dumps (loc3 (float(lat), float(long))), mimetype='application/json')
 
 @app.route ('/bikes/<float:lat>/<float:long>')
 def stns (lat, long):
@@ -121,7 +123,43 @@ def loc2 (lat, long):
         if i > 10: break
 #    print js
     return markers
+###
 
+def loc3 (lat, long):
+    logging.warn ("here we go")
+    dists = defaultdict (list)
+    doc = xml2json (urllib2.urlopen ('http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml'), encoding = "utf-8")
+# unclear why I need so many steps
+    docjson = doc.get_json()
+    data = json.loads (docjson)
+    stations = data [u'stations']
+    cx = (lat, long)
+    markers = []
+    logging.warn ("length of set %s" % len(stations.values () [0]))
+    for s in stations.values()[0]:  # xml delivers stations as a list
+        loc=(float (s[u'lat']), float (s['long']))
+        dist = sep (cx, loc)
+        logging.warn ("station %s, dist %s" % (s [u'name'], dist))
+    #    print loc, s[u'name'].encode ('utf-8'), dist
+        dists [dist].append (s)
+    js = ""
+    pb = open ("partb.html").read()
+    i = 1
+#    print "here come the dists", dists
+    for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
+        s = sr [0]
+        logging.warn ("d %s, s %s" % (d, s [u'name']))
+        marker = {"name": u(s[u'name'].strip()), "loc": {"lat": u(s[u'lat']), "long":u(s[u'long'])}, "levels": {"available": u(s[u'nbBikes']), "free": u(s[u'nbEmptyDocks'])}}
+#        markers.append (json.dumps (marker))
+        markers.append (marker)
+        i+=1
+        if i > 10: break
+#    print js
+    return markers
+
+#
+
+###
 #
 if __name__ == "__main__":
 #    print loc2 (51.5, -0.14)
