@@ -1,5 +1,5 @@
 from collections import defaultdict
-from xmlutils.xml2json import xml2json
+from bs4 import BeautifulSoup as bs
 import urllib2, json
 from math import cos, pi
 
@@ -13,22 +13,15 @@ def u (val):
 
 def loc2 (lat, long):
     dists = defaultdict (list)
-    doc = xml2json (urllib2.urlopen ('http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml'), encoding = "utf-8")
-    docjson = doc.get_json()
-    print doc.get_json()
-    print docjson
-#    data = json.load (open ("document", "r"))
-    data = json.loads (docjson)
-#    print data
-    print data.keys()
-    stations = data [u'stations']
-    print stations.keys()
-    print "values", stations.values ()
+    doc = urllib2.urlopen ('http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').read ()
+    soup = bs (doc)
+
     cx = (lat, long)
     markers = []
-    for s in stations.values()[0]:  # xml delivers stations as a list
+    for s in soup.find_all ("station"):
         print s
-        loc=(float (s[u'lat']), float (s['long']))
+        print s.find_all ("lat")
+        loc=(float (s.find_all ("lat")[0].text), float (s.find_all ("long")[0].text))
         dist = sep (cx, loc)
     #    print loc, s[u'name'].encode ('utf-8'), dist
         dists [dist].append (s)
@@ -39,7 +32,7 @@ def loc2 (lat, long):
     for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
 #        print d, sr
         s = sr [0]
-        marker = {"name": u(s[u'name'].strip()), "loc": {"lat": u(s[u'lat']), "long":u(s[u'long'])}, "levels": {"available": u(s[u'nbBikes']), "free": u(s[u'nbEmptyDocks'])}}
+        marker = {"name": u(s.find_all("name")[0].text.strip()), "loc": {"lat": u(s.find_all("lat")[0].text), "long":u(s.find_all("long")[0].text)}, "levels": {"available": u(s.find_all("nbbikes")[0].text), "free": u(s.find_all("nbemptydocks")[0].text)}}
 #        markers.append (json.dumps (marker))
         markers.append (marker)
         i+=1

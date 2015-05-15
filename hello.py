@@ -1,5 +1,5 @@
 import logging
-from xmlutils.xml2json import xml2json
+from bs4 import BeautifulSoup as bs
 import os, subprocess
 from collections import defaultdict
 from flask import Flask, Response, url_for, send_from_directory
@@ -8,9 +8,6 @@ from math import cos, pi
 
 app = Flask (__name__, static_folder='static', static_url_path='')
 
-#print json.dumps (data ["dockStation"], sort_keys=True, indent=4)
-
-#print u"\n".join ([ "%s, %s: %s, bikes Available %s, slots free %s" % (x [u'latitude'], x[u'longitude'], x[u'name'], x[u'bikesAvailable'], x[u'emptySlots']) for x in stations]).encode ('utf-8')
 
 dists = defaultdict (list)
 
@@ -72,6 +69,7 @@ def loc1 (lat, long):
     js = open ("parta.html").read()
     return js + loc (lat, long) + open ("partc.html").read ()
 
+# won't work any more, this api has gone away. See loc3 for a working example of xml parser
 def loc (lat, long):
     dists = defaultdict (list)
     data = json.load (urllib2.urlopen ('http://bike-stats.appspot.com/service/rest/bikestats?format=json'))
@@ -109,8 +107,6 @@ def loc2 (lat, long):
         dist = sep (cx, loc)
     #    print loc, s[u'name'].encode ('utf-8'), dist
         dists [dist].append (s)
-    js = ""
-    pb = open ("partb.html").read()
     i = 1
 #    print "here come the dists", dists
     for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
@@ -121,45 +117,35 @@ def loc2 (lat, long):
         markers.append (marker)
         i+=1
         if i > 10: break
-#    print js
     return markers
-###
+
+
 
 def loc3 (lat, long):
-    logging.warn ("here we go")
     dists = defaultdict (list)
-    doc = xml2json (urllib2.urlopen ('http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml'), encoding = "utf-8")
-# unclear why I need so many steps
-    docjson = doc.get_json()
-    data = json.loads (docjson)
-    stations = data [u'stations']
+    doc = urllib2.urlopen ('http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').read ()
+    soup = bs (doc)
+
     cx = (lat, long)
     markers = []
-    logging.warn ("length of set %s" % len(stations.values () [0]))
-    for s in stations.values()[0]:  # xml delivers stations as a list
-        loc=(float (s[u'lat']), float (s['long']))
+    for s in soup.find_all ("station"):
+        loc=(float (s.find_all ("lat")[0].text), float (s.find_all ("long")[0].text))
         dist = sep (cx, loc)
-        logging.warn ("station %s, dist %s" % (s [u'name'], dist))
     #    print loc, s[u'name'].encode ('utf-8'), dist
         dists [dist].append (s)
-    js = ""
-    pb = open ("partb.html").read()
     i = 1
 #    print "here come the dists", dists
     for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
+#        print d, sr
         s = sr [0]
-        logging.warn ("d %s, s %s" % (d, s [u'name']))
-        marker = {"name": u(s[u'name'].strip()), "loc": {"lat": u(s[u'lat']), "long":u(s[u'long'])}, "levels": {"available": u(s[u'nbBikes']), "free": u(s[u'nbEmptyDocks'])}}
+        marker = {"name": u(s.find_all("name")[0].text.strip()), "loc": {"lat": u(s.find_all("lat")[0].text), "long":u(s.find_all("long")[0].text)}, "levels": {"available": u(s.find_all("nbbikes")[0].text), "free": u(s.find_all("nbemptydocks")[0].text)}}
 #        markers.append (json.dumps (marker))
         markers.append (marker)
         i+=1
-        if i > 10: break
-#    print js
+        if i > 20: break
     return markers
 
-#
 
-###
 #
 if __name__ == "__main__":
 #    print loc2 (51.5, -0.14)
