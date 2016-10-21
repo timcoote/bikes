@@ -19,7 +19,7 @@ def loc2 (lat, long):
     cx = (lat, long)
     markers = []
     for s in soup.find_all ("station"):
-        print s
+        print ("found station %s" % s)
         print s.find_all ("lat")
         loc=(float (s.find_all ("lat")[0].text), float (s.find_all ("long")[0].text))
         dist = sep (cx, loc)

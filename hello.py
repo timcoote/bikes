@@ -62,7 +62,8 @@ def stns (lat, long):
 
 @app.route ('/json')
 def retjson ():
-    return Response('{"s": "hello"}', mimetype='application/json')
+#    return Response('{"s": "hello"}', mimetype='application/json')
+    return Response(json.dumps (loc3 (51.5, -0.1)), mimetype='application/json')
 
 def loc1 (lat, long):
     js = open ("parta.html").read()
@@ -124,13 +125,17 @@ def loc3 (lat, long):
     dists = defaultdict (list)
     doc = urllib2.urlopen ('http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').read ()
     soup = bs (doc)
-
+#    print ("soup %s *** endof doc" % "1")
     cx = (lat, long)
     markers = []
     for s in soup.find_all ("station"):
+#        print ("found station %s" % s)
         loc=(float (s.find_all ("lat")[0].text), float (s.find_all ("long")[0].text))
+#        print ("{} ".format (loc))
         dist = sep (cx, loc)
-    #    print loc, s[u'name'].encode ('utf-8'), dist
+#        print loc, s[u'name'].encode ('utf-8'), dist
+#        print loc, dist, s.__class__
+#        print loc, s, dist
         dists [dist].append (s)
     i = 1
 #    print "here come the dists", dists
@@ -147,7 +152,7 @@ def loc3 (lat, long):
 
 #
 if __name__ == "__main__":
-#    print loc2 (51.5, -0.14)
+    print loc3 (51.5, -0.14)
     app.debug = True
     app.run ()
 
