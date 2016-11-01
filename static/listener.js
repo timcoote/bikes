@@ -32,8 +32,8 @@ function on_connect() {
 }
 
 // This will be called upon a connection error
-function on_connect_error() {
-  output.innerHTML += 'Connection failed!<br />';
+function on_connect_error(err) {
+  output.innerHTML += err + 'Connection has failed!<br />';
 }
 
 // This will be called upon arrival of a message
