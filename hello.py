@@ -5,6 +5,7 @@ from collections import defaultdict
 from flask import Flask, Response, url_for, send_from_directory
 import json, urllib2
 from math import cos, pi
+import requests
 
 app = Flask (__name__, static_folder='static', static_url_path='')
 
@@ -123,7 +124,11 @@ def loc2 (lat, long):
 
 def loc3 (lat, long):
     dists = defaultdict (list)
-    doc = urllib2.urlopen ('http://www.tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').read ()
+    try:
+       doc = requests.get ('https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').text
+    except Exception as e:
+       print ("here's the problem %s" % e)
+       return
     soup = bs (doc)
 #    print ("soup %s *** endof doc" % "1")
     cx = (lat, long)
