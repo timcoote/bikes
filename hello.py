@@ -40,11 +40,11 @@ def serveStatic (fil):
 #    return url_for ('static', filename='blah.html')
 #    return send_from_directory ('static', filename='blah.html')
 
-@app.route ('/')
+@app.route ('/test')
 def index ():
     return ('hello dad')
 
-@app.route ('/test')
+@app.route ('/')
 def tester ():
     return (open ('x.html').read())
     
