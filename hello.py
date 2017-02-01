@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 import os, subprocess
 from collections import defaultdict
 from flask import Flask, Response, url_for, send_from_directory
-import json, urllib2
+import json
 from math import cos, pi
 import requests
 
@@ -54,12 +54,8 @@ def hello ():
 
 @app.route ('/loc/<string:lat>/<string:long>')
 def location (lat, long):
-#    return Response (json.dumps (loc2 (51.50741, -0.12725)), mimetype='application/json')
     return Response (json.dumps (loc3 (float(lat), float(long))), mimetype='application/json')
 
-@app.route ('/bikes/<float:lat>/<float:long>')
-def stns (lat, long):
-    return loc (lat, long)
 
 @app.route ('/json')
 def retjson ():
@@ -70,56 +66,9 @@ def loc1 (lat, long):
     js = open ("parta.html").read()
     return js + loc (lat, long) + open ("partc.html").read ()
 
-# won't work any more, this api has gone away. See loc3 for a working example of xml parser
-def loc (lat, long):
-    dists = defaultdict (list)
-    data = json.load (urllib2.urlopen ('http://bike-stats.appspot.com/service/rest/bikestats?format=json'))
-    stations = data ["dockStation"]
-    cx = (lat, long)
-    for s in stations:
-        loc=(float (s[u'latitude']), float (s['longitude']))
-        dist = sep (cx, loc)
-    #    print loc, s[u'name'].encode ('utf-8'), dist
-        dists [dist].append (s)
-    js = ""
-    pb = open ("partb.html").read()
-    i = 1
-#    print "here come the dists", dists
-    for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
-#        print d, sr
-        s = sr [0]
-        js += pb % tuple ([x.encode('utf-8') for x in s[u'name'].strip(), s[u'latitude'], s[u'longitude'], s[u'bikesAvailable'], s[u'emptySlots']])
-        i+=1
-        if i > 10: break
-#    print js
-    return js
 
 def u (val):
     return val.encode('utf-8')
-
-def loc2 (lat, long):
-    dists = defaultdict (list)
-    data = json.load (urllib2.urlopen ('http://bike-stats.appspot.com/service/rest/bikestats?format=json'))
-    stations = data ["dockStation"]
-    cx = (lat, long)
-    markers = []
-    for s in stations:
-        loc=(float (s[u'latitude']), float (s['longitude']))
-        dist = sep (cx, loc)
-    #    print loc, s[u'name'].encode ('utf-8'), dist
-        dists [dist].append (s)
-    i = 1
-#    print "here come the dists", dists
-    for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
-#        print d, sr
-        s = sr [0]
-        marker = {"name": u(s[u'name'].strip()), "loc": {"lat": u(s[u'latitude']), "long":u(s[u'longitude'])}, "levels": {"available": u(s[u'bikesAvailable']), "free": u(s[u'emptySlots'])}}
-#        markers.append (json.dumps (marker))
-        markers.append (marker)
-        i+=1
-        if i > 10: break
-    return markers
-
 
 
 def loc3 (lat, long):
@@ -129,7 +78,8 @@ def loc3 (lat, long):
     except Exception as e:
        print ("here's the problem %s" % e)
        return
-    soup = bs (doc)
+
+    soup = bs (doc, 'html.parser')
 #    print ("soup %s *** endof doc" % "1")
     cx = (lat, long)
     markers = []
