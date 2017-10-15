@@ -1,6 +1,6 @@
 Flask==0.12.2
-Jinja2==2.7.2
-MarkupSafe==0.19
+Jinja2==2.9.7
+MarkupSafe==1.0
 Werkzeug==0.9.4
 backports.ssl-match-hostname==3.4.0.2
 cssselect==0.9.1
