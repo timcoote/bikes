@@ -54,6 +54,7 @@ def hello ():
 
 @app.route ('/loc/<string:lat>/<string:long>')
 def location (lat, long):
+    print ("in location {}".format (loc3 (float (lat), float (long)).__class__))
     return Response (json.dumps (loc3 (float(lat), float(long))), mimetype='application/json')
 
 
@@ -68,7 +69,8 @@ def loc1 (lat, long):
 
 
 def u (val):
-    return val.encode('utf-8')
+#    return val.encode('utf-8')
+    return val
 
 
 def loc3 (lat, long):
@@ -109,5 +111,6 @@ def loc3 (lat, long):
 if __name__ == "__main__":
     print (loc3 (51.5, -0.14))
     app.debug = True
+#    app.run (port=4999)
     app.run ()
 
