@@ -1,4 +1,4 @@
-Flask==0.10.1
+Flask==0.12.2
 Jinja2==2.7.2
 MarkupSafe==0.19
 Werkzeug==0.9.4
@@ -11,5 +11,5 @@ itsdangerous==0.24
 pycurl==7.19.3
 simplejson==3.2.0
 six==1.4.1
-beautifulsoup4==4.3.2
+beautifulsoup4==4.6.0
 requests==2.13.0
