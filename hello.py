@@ -88,14 +88,14 @@ def loc3 (lat, long):
         loc=(float (s.find_all ("lat")[0].text), float (s.find_all ("long")[0].text))
 #        print ("{} ".format (loc))
         dist = sep (cx, loc)
-#        print loc, s[u'name'].encode ('utf-8'), dist
-#        print loc, dist, s.__class__
-#        print loc, s, dist
+#        print (loc, s[u'name'].encode ('utf-8'), dist)
+#        print (loc, dist, s.__class__)
+#        print (loc, s, dist)
         dists [dist].append (s)
     i = 1
-#    print "here come the dists", dists
+#    print ("here come the dists", dists)
     for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
-#        print d, sr
+#        print (d, sr)
         s = sr [0]
         marker = {"name": u(s.find_all("name")[0].text.strip()), "loc": {"lat": u(s.find_all("lat")[0].text), "long":u(s.find_all("long")[0].text)}, "levels": {"available": u(s.find_all("nbbikes")[0].text), "free": u(s.find_all("nbemptydocks")[0].text)}}
 #        markers.append (json.dumps (marker))
@@ -107,7 +107,7 @@ def loc3 (lat, long):
 
 #
 if __name__ == "__main__":
-    print loc3 (51.5, -0.14)
+    print (loc3 (51.5, -0.14))
     app.debug = True
     app.run ()
 
