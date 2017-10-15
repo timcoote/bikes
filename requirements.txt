@@ -7,7 +7,7 @@ cssselect==1.0.1
 decorator==4.1.2
 gunicorn==19.7.1
 itsdangerous==0.24
-pycurl==7.19.3
-simplejson==3.2.0
+pycurl==7.43.0
+simplejson==3.11.1
 beautifulsoup4==4.6.0
-requests==2.13.0
+requests==2.18.4
