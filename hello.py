@@ -54,7 +54,6 @@ def hello ():
 
 @app.route ('/loc/<string:lat>/<string:long>')
 def location (lat, long):
-    print ("in location {}".format (loc3 (float (lat), float (long)).__class__))
     return Response (json.dumps (loc3 (float(lat), float(long))), mimetype='application/json')
 
 
@@ -66,11 +65,6 @@ def retjson ():
 def loc1 (lat, long):
     js = open ("parta.html").read()
     return js + loc (lat, long) + open ("partc.html").read ()
-
-
-def u (val):
-#    return val.encode('utf-8')
-    return val
 
 
 def loc3 (lat, long):
@@ -99,7 +93,8 @@ def loc3 (lat, long):
     for (d, sr) in sorted(dists.items (), key = lambda x: x[0], reverse = False):
 #        print (d, sr)
         s = sr [0]
-        marker = {"name": u(s.find_all("name")[0].text.strip()), "loc": {"lat": u(s.find_all("lat")[0].text), "long":u(s.find_all("long")[0].text)}, "levels": {"available": u(s.find_all("nbbikes")[0].text), "free": u(s.find_all("nbemptydocks")[0].text)}}
+#        marker = {"name": u(s.find_all("name")[0].text.strip()), "loc": {"lat": u(s.find_all("lat")[0].text), "long":u(s.find_all("long")[0].text)}, "levels": {"available": u(s.find_all("nbbikes")[0].text), "free": u(s.find_all("nbemptydocks")[0].text)}}
+        marker = {"name": s.find_all("name")[0].text.strip(), "loc": {"lat": s.find_all("lat")[0].text, "long":s.find_all("long")[0].text}, "levels": {"available": s.find_all("nbbikes")[0].text, "free": s.find_all("nbemptydocks")[0].text}}
 #        markers.append (json.dumps (marker))
         markers.append (marker)
         i+=1
