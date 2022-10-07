@@ -63,7 +63,7 @@ def retjson ():
     return Response(json.dumps (loc3 (51.5, -0.1)), mimetype='application/json')
 
 def loc1 (lat, long):
-    js = open ("parta.html").read()
+    js = open ("parta.html").read().replace("#MAP_KEY#", os.environ['MAP_KEY'])
     return js + loc (lat, long) + open ("partc.html").read ()
 
 
