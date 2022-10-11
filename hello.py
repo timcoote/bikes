@@ -46,7 +46,7 @@ def index ():
 
 @app.route ('/')
 def tester ():
-    return (open ('x.html').read())
+    return open ('x.html').read().replace("#MAP_KEY#", os.environ['MAP_KEY'])
     
 @app.route ('/stuff')
 def hello ():
