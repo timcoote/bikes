@@ -1,0 +1,9 @@
+2022-10-12 validated a migration of this code from heroku to qoddi, using github as the repo. Secrets pulled out of the repo (and history). Add to project (both heroku
+and qodii).  Heroku `ceful-earth-7435.herokuapp.com` will be retired as heroku free tier disappears. New one is at `http://oayqgxmvdh.eu09.qoddiapp.com/` (note not https, yet).
+
+git trunk renamed to `main` from `master`. App details should be visible here: `https://app.qoddi.com/settings/?appid=146109` not a great interface as it's a gui, and timing isn't
+very fast. Seems to be non-trivial working out if builds/deploys have happened as expected.
+
+note that the google api keys, etc are under the Differentis account, at `https://console.cloud.google.com/google/maps-apis/credentials?_ga=2.83449622.1491595879.1665508426-1325440863.1665134775&project=london-bikes-and-slots`
+
+
