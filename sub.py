@@ -1,11 +1,11 @@
-import pika, os, urlparse, time
+import pika, os, urllib.parse, time
 
 inbound_url_str = os.environ.get ("CLOUDAMQP_URL", "amqp://guest:guest@localhost//")
-inbound_url = urlparse.urlparse (inbound_url_str)
-print inbound_url_str
+inbound_url = urllib.parse.urlparse (inbound_url_str)
+print (inbound_url_str)
 
 outbound_url_str = ("amqp://guest:guest@localhost//")
-outbound_url = urlparse.urlparse (outbound_url_str)
+outbound_url = urllib.parse.urlparse (outbound_url_str)
 
 in_connection = pika.BlockingConnection (pika.ConnectionParameters (host=inbound_url.hostname, virtual_host=inbound_url.path [1:],
                       credentials = pika.PlainCredentials (inbound_url.username, inbound_url.password)))
@@ -21,12 +21,13 @@ out_channel.queue_declare (queue="pv", durable=True)
 
 
 def callback (ch, method, properties, body):
-    print "[y] %s Received %r" % (time.strftime ("%M %S", time.localtime()), body,)
-    out_channel.basic_publish (exchange = "", routing_key = "pv", body = body)
+    print ("[y] %s Received %r" % (time.strftime ("%M %S", time.localtime()), body,))
+    # is this needed for remote:  out_channel.basic_publish (exchange = "", routing_key = "pv", body = body)
 
-in_channel.basic_consume (callback, queue="pv", no_ack=True)
+#in_channel.basic_consume (callback, queue="pv", no_ack=True)
+in_channel.basic_consume ('pv', callback, auto_ack=True)
 
-print "waiting..."
+print ("waiting...")
 
 in_channel.start_consuming ()
 
