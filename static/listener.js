@@ -1,7 +1,7 @@
 // Use SockJS
 //Stomp.WebSocketClass = SockJS;
 
-var ws = new WebSocket ('http://127.0.0.1:15674/ws');
+var ws = new WebSocket ('ws://127.0.0.1:15674/ws');
 //var ws = new SockJS ('amqp://bbszqpfp:zP35CsFKb_va50nYvxG7652kC0zFl32r@lemur.cloudamqp.com/bbszqpfp');
 //var ws = new SockJS ('ws://bbszqpfp:zP35CsFKb_va50nYvxG7652kC0zFl32r@lemur.cloudamqp.com/bbszqpfp:61614/stomp'); // fails with no xor
 //var ws = new SockJS ('http://peaceful-earth-7435.herokuapp.com:61614/stomp');
