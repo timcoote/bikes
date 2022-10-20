@@ -16,16 +16,17 @@ out_connection = pika.BlockingConnection (pika.ConnectionParameters (host=outbou
 in_channel = in_connection.channel ()
 out_channel = out_connection.channel ()
 
-in_channel.queue_declare (queue="pv", durable=True)
+in_channel.queue_declare (queue="pv_to_sub", durable=True)
 out_channel.queue_declare (queue="pv", durable=True)
 
 
 def callback (ch, method, properties, body):
     print ("[y] %s Received %r" % (time.strftime ("%M %S", time.localtime()), body,))
-    # is this needed for remote:  out_channel.basic_publish (exchange = "", routing_key = "pv", body = body)
+    # is this needed ? it just seems to feed back to itself, at least if browser doesn't pick it up
+    out_channel.basic_publish (exchange = "", routing_key = "pv", body = body)
 
 #in_channel.basic_consume (callback, queue="pv", no_ack=True)
-in_channel.basic_consume ('pv', callback, auto_ack=True)
+in_channel.basic_consume ('pv_to_sub', callback, auto_ack=True)
 
 print ("waiting...")
 

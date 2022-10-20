@@ -12,7 +12,8 @@ connection = pika.BlockingConnection (pika.ConnectionParameters (host=url.hostna
 
 channel = connection.channel ()
 
-channel.queue_declare (queue="pv", durable=True)
+channel.queue_declare (queue="pv_to_sub", durable=True)
+#channel.queue_declare (queue="pv", durable=True)
 
 #done=False
 #while not done:
@@ -28,7 +29,7 @@ for i in range (1,2000):
 #    msg = "Current output is " + subprocess.check_output (["ssh", "mercury", "ssh", "tim@172.17.1.5", "cat", "pvi/aurora-1.7.8d/output", "|", "tail", "-1", "|", "awk", "'{print $1, $10, $15}'"])
     print (msg)
 
-    channel.basic_publish (exchange = "", routing_key = "pv", body = msg)
+    channel.basic_publish (exchange = "", routing_key = "pv_to_sub", body = msg)
 
 print (" [x] Sent 'hello world'")
 

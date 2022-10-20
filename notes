@@ -6,4 +6,8 @@ very fast. Seems to be non-trivial working out if builds/deploys have happened a
 
 note that the google api keys, etc are under the Differentis account, at `https://console.cloud.google.com/google/maps-apis/credentials?_ga=2.83449622.1491595879.1665508426-1325440863.1665134775&project=london-bikes-and-slots`
 
+had to destroy/recreat cloudamqp instance on the heroku project to get it working. Example routes from a local terminal (with pub.py) to amqpcloud.com instance, then picked up by `sub.py`
+which publised onto local rabbit instance, which is picked up by the browser listening on `http://peaceful-earth-7435.herokuapp.com/listener.html`.  Timings are in the various outputs.
+Two way delay to heroku/cloudamqp is ~2s. Local pub/sub is instantaneous. Need to use `. ./setamqpenv.sh` to get the env set up properly, or it will just route via local rabbit exchange only.
+I could rip out local rabbit, but it seems to me that that would complicate local testing.
 
