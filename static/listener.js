@@ -50,6 +50,7 @@ function on_message(m) {
 client.connect ('guest', 'guest', on_connect, on_connect_error);
 
 window.onload = function () {
+  alert ("window loaded");
   // Fetch output panel
   output = document.getElementById("output");
 
