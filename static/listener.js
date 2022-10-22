@@ -52,7 +52,7 @@ client.connect ('guest', 'guest', on_connect, on_connect_error);
 window.onload = function () {
   // Fetch output panel
   output = document.getElementById("output");
-  console.log ("output defined?");
+  console.log (output);
 
   // Connect
   client.connect(
