@@ -54,6 +54,7 @@ window.onload = function () {
   // Fetch output panel
   output = document.getElementById("output");
   console.log (output);
+  console.log (client);
 
   // Connect
   client.connect(
@@ -63,5 +64,6 @@ window.onload = function () {
     on_connect_error,
     mq_vhost
   );
+  console.log (client);
 }
 
