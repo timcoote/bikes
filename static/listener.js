@@ -8,6 +8,7 @@ var ws = new WebSocket ('ws://127.0.0.1:15674/ws');
 
 var client = Stomp.over(ws);
 
+// this should cause client to write out debug info
 client.debug = function(str) {
     // append the debug log to a #debug div somewhere in the page using JQuery:
     // $("#debug").append(str + "\n");
@@ -56,13 +57,14 @@ function on_message(m) {
 //var client = Stomp.client(mq_url);
 // nb also called in onload. unsure why. page refresh seems to break the process
 //  without this call, nothing conects? is it just this one that's executed?
- client.connect ('guest', 'guest', on_connect, on_connect_error);
+  console.log ("about to client.connect outside of window.onload" + output + client);
+  client.connect ('guest', 'guest', on_connect, on_connect_error);
+  console.log ("just client.connect outside" + output + client);
 
 window.onload = function () {
   // Fetch output panel
   output = document.getElementById("output");
-  console.log (output);
-  console.log (client);
+  console.log ("just grabbed output" + output + client);
 
   // Connect
   client.connect(
@@ -72,6 +74,6 @@ window.onload = function () {
     on_connect_error,
     mq_vhost
   );
-  console.log (client);
+  console.log (" just called connect" + output + client);
 }
 
