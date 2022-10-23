@@ -48,7 +48,7 @@ function on_message(m) {
 // Create a client
 //var client = Stomp.client(mq_url);
 // nb also called in onload. unsure why. page refresh seems to break the process
-//client.connect ('guest', 'guest', on_connect, on_connect_error);
+client.connect ('guest', 'guest', on_connect, on_connect_error);
 
 window.onload = function () {
   // Fetch output panel
