@@ -8,6 +8,12 @@ var ws = new WebSocket ('ws://127.0.0.1:15674/ws');
 
 var client = Stomp.over(ws);
 
+client.debug = function(str) {
+    // append the debug log to a #debug div somewhere in the page using JQuery:
+    // $("#debug").append(str + "\n");
+    console.log (str);
+  };
+
 // Connection parameters
 var mq_username = "guest",
     mq_password = "guest",
