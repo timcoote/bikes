@@ -57,8 +57,9 @@ function on_message(m) {
 //var client = Stomp.client(mq_url);
 // nb also called in onload. unsure why. page refresh seems to break the process
 //  without this call, nothing conects? is it just this one that's executed?
+  output = document.getElementById("output");
   console.log ("about to client.connect outside of window.onload" + output + client);
-//  client.connect ('guest', 'guest', on_connect, on_connect_error);
+  client.connect ('guest', 'guest', on_connect, on_connect_error);
   console.log ("just client.connect outside" + output + client);
 
 window.onload = function () {
