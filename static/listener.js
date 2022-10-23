@@ -57,13 +57,13 @@ window.onload = function () {
   console.log (client);
 
   // Connect
-  client.connect(
-    mq_username,
-    mq_password,
-    on_connect,
-    on_connect_error,
-    mq_vhost
-  );
+  //client.connect(
+  //  mq_username,
+  //  mq_password,
+  //  on_connect,
+  //  on_connect_error,
+  //  mq_vhost
+  //);
   console.log (client);
 }
 
