@@ -32,8 +32,9 @@ var output;
 
 // This will be called upon successful connection
 function on_connect() {
-  output.innerHTML += 'Connected to RabbitMQ-Web-Stomp<br />';
   console.log(client);
+  console.log(output);
+  output.innerHTML += 'Connected to RabbitMQ-Web-Stomp<br />';
   client.subscribe(mq_queue, on_message);
 }
 
