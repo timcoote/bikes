@@ -1,5 +1,5 @@
 2022-10-12 validated a migration of this code from heroku to qoddi, using github as the repo. Secrets pulled out of the repo (and history). Add to project (both heroku
-and qodii).  Heroku `ceful-earth-7435.herokuapp.com` will be retired as heroku free tier disappears. New one is at `http://oayqgxmvdh.eu09.qoddiapp.com/` (note not https, yet).
+and qodii).  Heroku `peaceful-earth-7435.herokuapp.com` will be retired as heroku free tier disappears. New one is at `http://oayqgxmvdh.eu09.qoddiapp.com/` (note not https, yet).
 
 git trunk renamed to `main` from `master`. App details should be visible here: `https://app.qoddi.com/settings/?appid=146109` not a great interface as it's a gui, and timing isn't
 very fast. Seems to be non-trivial working out if builds/deploys have happened as expected.
@@ -10,4 +10,16 @@ had to destroy/recreat cloudamqp instance on the heroku project to get it workin
 which publised onto local rabbit instance, which is picked up by the browser listening on `http://peaceful-earth-7435.herokuapp.com/listener.html`.  Timings are in the various outputs.
 Two way delay to heroku/cloudamqp is ~2s. Local pub/sub is instantaneous. Need to use `. ./setamqpenv.sh` to get the env set up properly, or it will just route via local rabbit exchange only.
 I could rip out local rabbit, but it seems to me that that would complicate local testing.
+
+Minimal working version (see ../notes):
+- use local browser
+- use vagrant + 2x vagrant ssh; one of which needs to tunnel 15674 (vagrant ssh -- -L 15674:localhost:15674). This tunnels from the rabbitmq broker on the guest to the port used in `static/listener.{js,html}`
+to get messages from the queues.
+-- In one of these, need `heroku login -i`
+-- In both of these, `cd /vagrant/heroku ; . ./setamqp.sh` to get the environemnt set up.
+- use `python pub.py` and `python sub.py` on vagrant box to create and print + route to browser, random values, inc delays (see first 2 numbers on line in browser: these are the minutes, secs
+of the original message generation).
+- much grief getting this to work after a page refresh. In the end put the js in the body, rather than faffing with `window.onload`. 
+
+- still not working to qoddi as I'd need to find somewhere to host cloudamqp.com lemur instance -I'd thought that this was part of the service; but it's not.
 
