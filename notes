@@ -1,3 +1,6 @@
+2024-3-12: moved to render.com. had to update many dependencies, change the name from hello.py to app.py, update google map api referrer. The launch process for these hosters is, largely, opaque. In this instance (and heroku), it's based
+on gunicorn. In this instance, Procfile seems to be ignored.  Find api key from `notes`.  Not trivial to make work with vagrant box - didn't finish that. Issues with fedora versions, etc, etc
+
 2022-10-12 validated a migration of this code from heroku to qoddi, using github as the repo. Secrets pulled out of the repo (and history). Add to project (both heroku
 and qodii).  Heroku `peaceful-earth-7435.herokuapp.com` will be retired as heroku free tier disappears. New one is at `http://oayqgxmvdh.eu09.qoddiapp.com/` (note not https, yet).
 
