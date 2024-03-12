@@ -28,7 +28,7 @@ def serveSocket ():
 
 @app.route ('/static/<string:fil>')
 def serveStatic (fil):
-    return send_from_directory ('static', filename=fil)
+    return send_from_directory ('static', fil)
 
 #@app.route ('/static/promise.js')
 #def servePromise ():
