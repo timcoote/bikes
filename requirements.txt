@@ -5,7 +5,7 @@ Werkzeug==3.0.1
 backports.ssl-match-hostname==3.5.0.1
 cssselect==1.0.1
 decorator==4.1.2
-gunicorn==19.7.1
+gunicorn==21.2.0
 itsdangerous==2.1.2
 pycurl==7.45.3
 simplejson==3.11.1
