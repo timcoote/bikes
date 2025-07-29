@@ -71,6 +71,7 @@ def loc3 (lat, long):
     dists = defaultdict (list)
     try:
        doc = requests.get ('https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').text
+       return doc
     except Exception as e:
        print ("here's the problem %s" % e)
        return
