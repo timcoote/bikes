@@ -67,22 +67,63 @@ def loc1 (lat, long):
     return js + loc (lat, long) + open ("partc.html").read ()
 
 
+def mk_station (indata: dict):
+    print (f"{indata.items()=}")
+    assert indata['placeType'] == 'BikePoint'
+    stn = {}
+    stn['name'] = indata['commonName']
+    stn['lat'] = indata['lat']
+    stn['long'] = indata['lon']
+    stn['levels'] = {}
+
+    for n, prop in enumerate (indata['additionalProperties']):
+        if n == 0:
+            modified = prop['modified']
+        assert prop['$type'] == 'Tfl.Api.Presentation.Entities.AdditionalProperties, Tfl.Api.Presentation.Entities'
+        assert prop['category'] == 'Description'
+        assert prop['sourceSystemKey'] == 'BikePoints'
+        assert modified == prop['modified']
+
+        match prop['key']:
+            case 'NbStandardBikes':
+                stn['levels']['available'] = int(prop['value'])
+            case 'NbEmptyDocks':
+                stn['levels']['free'] = int (prop['value'])
+            case _:
+                pass
+
+    return stn
+
+# indata.keys()=dict_keys(['$type', 'id', 'url', 'commonName', 'placeType', 'additionalProperties', 'children', 'childrenUrls', 'lat', 'lon'])
+
+def mk_stations (inst: str):
+    data = json.loads (inst)
+    print (f"{data[0]=}")
+    stns = [mk_station (d) for d in data]
+
+    return stns
+
+
 def loc3 (lat, long):
     dists = defaultdict (list)
     try:
-       doc = requests.get ('https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').text
+       #doc = requests.get ('https://tfl.gov.uk/tfl/syndication/feeds/cycle-hire/livecyclehireupdates.xml').text
+       doc = requests.get ('https://api.tfl.gov.uk/BikePoint/').text
     except Exception as e:
        print ("here's the problem %s" % e)
        return
 
+    stations = mk_stations (doc)
+
     soup = bs (doc, 'html.parser')
-    return soup.get_text()
 #    print ("soup %s *** endof doc" % "1")
     cx = (lat, long)
     markers = []
-    for s in soup.find_all ("station"):
+    #for s in soup.find_all ("station"):
+    for s in stations:
 #        print ("found station %s" % s)
-        loc=(float (s.find_all ("lat")[0].text), float (s.find_all ("long")[0].text))
+        #loc=(float (s.find_all ("lat")[0].text), float (s.find_all ("long")[0].text))
+        loc = (s['lat'], s['long'])
 #        print ("{} ".format (loc))
         dist = sep (cx, loc)
 #        print (loc, s[u'name'].encode ('utf-8'), dist)
@@ -95,7 +136,8 @@ def loc3 (lat, long):
 #        print (d, sr)
         s = sr [0]
 #        marker = {"name": u(s.find_all("name")[0].text.strip()), "loc": {"lat": u(s.find_all("lat")[0].text), "long":u(s.find_all("long")[0].text)}, "levels": {"available": u(s.find_all("nbbikes")[0].text), "free": u(s.find_all("nbemptydocks")[0].text)}}
-        marker = {"name": s.find_all("name")[0].text.strip(), "loc": {"lat": s.find_all("lat")[0].text, "long":s.find_all("long")[0].text}, "levels": {"available": s.find_all("nbbikes")[0].text, "free": s.find_all("nbemptydocks")[0].text}}
+        #marker = {"name": s.find_all("name")[0].text.strip(), "loc": {"lat": s.find_all("lat")[0].text, "long":s.find_all("long")[0].text}, "levels": {"available": s.find_all("nbbikes")[0].text, "free": s.find_all("nbemptydocks")[0].text}}
+        marker = {"name": s["name"], "loc": {"lat": s["lat"], "long": s['long']}, "levels": s['levels']}
 #        markers.append (json.dumps (marker))
         markers.append (marker)
         i+=1
